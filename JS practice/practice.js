@@ -12,7 +12,7 @@ let y = 5 + 2 + '3' + (8 + 3);
 console.log(~x);
 console.log(typeof(y));
 let objectA = {name: 'hello' , roll: 1102, _id: "1e2ew43r5e2redfe43"};
-console.log(objectA._id);
+console.log(objectA);
 console.log(typeof(objectA));
 
 console.log(myfunc(56, 67));
