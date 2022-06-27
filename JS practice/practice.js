@@ -13,3 +13,11 @@ console.log(~x);
 console.log(typeof(y));
 let objectA = {name: 'hello' , roll: 1102, _id: "1e2ew43r5e2redfe43"};
 console.log(objectA._id);
+console.log(typeof(objectA));
+
+console.log(myfunc(56, 67));
+function myfunc(int1, int2) {
+    return int1*int2;
+}
+
+// document.write(myfunc(56, 89));
