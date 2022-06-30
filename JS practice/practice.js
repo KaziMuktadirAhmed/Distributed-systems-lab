@@ -19,5 +19,5 @@ console.log(myfunc(56, 67));
 function myfunc(int1, int2) {
     return int1*int2;
 }
-
+// kaj korse git config vm theke 
 // document.write(myfunc(56, 89));
