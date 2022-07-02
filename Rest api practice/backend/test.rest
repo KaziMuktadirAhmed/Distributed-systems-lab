@@ -2,9 +2,9 @@ POST  http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "firstName" : "abdullasdalah",
-    "lastName" : "bariawdaw",
-    "email" : "kazi123@gmail.com",
+    "firstName" : "abd",
+    "lastName" : "bari",
+    "email" : "k23@gmail.com",
     "password" : "Some@thi2ng1"
     
 }

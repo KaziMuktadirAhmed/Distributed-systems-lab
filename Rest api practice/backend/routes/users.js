@@ -29,12 +29,10 @@ router.post("/", async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, salt);
 
         // storing user data and password hash in db
-        var newUser = new User({
+        await new User({
             ...req.body,
             password: hashPassword 
-        });
-        console.log(newUser);
-        newUser.save((err, doc) => {
+        }).save((err, doc) => {
             if(err) res.status(402).send({message: "error at saving user data"});
             else res.status(201).send({ message: "User created successfully" });
         });
