@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
             return res.status(400).send({message: error.details[0].message});
 
         const user = await User.findOne({email: req.body.email});
-
+        
         if(user)
             return res.status(409).send({message: "User with given email alread exists !!!"});
         
@@ -29,8 +29,15 @@ router.post("/", async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, salt);
 
         // storing user data and password hash in db
-        await new User({ ...req.body, password: hashPassword }).save();
-        res.status(201).send({ message: "User created successfully" });
+        var newUser = new User({
+            ...req.body,
+            password: hashPassword 
+        });
+        console.log(newUser);
+        newUser.save((err, doc) => {
+            if(err) res.status(402).send({message: "error at saving user data"});
+            else res.status(201).send({ message: "User created successfully" });
+        });
         
     } catch (error) {
         res.status(500).send({ message: "Internal Server Error !!!" });

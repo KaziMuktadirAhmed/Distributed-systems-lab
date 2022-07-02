@@ -2,10 +2,10 @@ POST  http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "firstname" : "abdul",
-    "Llastname" : "bari",
-    "email" : "kayse@gmail.com",
-    "password" : "something"
+    "firstName" : "abdullasdalah",
+    "lastName" : "bariawdaw",
+    "email" : "kazi123@gmail.com",
+    "password" : "Some@thi2ng1"
     
 }
 
@@ -13,3 +13,14 @@ Content-Type: application/json
 
 GET http://localhost:3000/api/users
 Content-Type: application/json
+
+###
+
+POST http://localhost:3000/api/auth
+Content-Type: application/json
+
+{
+    "email" : "kaziial@gmail.com",
+    "password" : "Some@thing1"
+    
+}
