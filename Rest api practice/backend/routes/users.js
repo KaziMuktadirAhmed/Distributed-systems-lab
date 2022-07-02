@@ -8,12 +8,12 @@ router.post("/", async (req, res) => {
         const {error} = validate(req.body);
 
         if(error) 
-            return res.status(400).send({messege: error.details[0].messege});
+            return res.status(400).send({message: error.details[0].message});
 
         const user = await User.findOne({email: req.body.email});
 
         if(user)
-            return res.status(409).send({messege: "User with given email alread exists !!!"});
+            return res.status(409).send({message: "User with given email alread exists !!!"});
         
         // generate salt and password hash for storage
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
