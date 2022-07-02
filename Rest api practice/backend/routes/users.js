@@ -3,6 +3,15 @@ const bcrypt = require('bcrypt');
 
 const {User, validate} = require('../models/user.js');
 
+router.get('/', (req, res) => {
+    User.find((err, doc) => {
+        if(!err)    
+            res.send(doc);
+        else
+            console.log('Error in receiving customer: ' + JSON.stringify(err, undefined, 2));
+    });
+});
+
 router.post("/", async (req, res) => {
     try {
         const {error} = validate(req.body);
@@ -24,7 +33,7 @@ router.post("/", async (req, res) => {
         res.status(201).send({ message: "User created successfully" });
         
     } catch (error) {
-        res.status(500).send({ message: "ok Internal Server Error !!!" });
+        res.status(500).send({ message: "Internal Server Error !!!" });
     }
 });
 
