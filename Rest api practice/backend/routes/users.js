@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         if(!err)    
             res.send(doc);
         else
-            console.log('Error in receiving customer: ' + JSON.stringify(err, undefined, 2));
+            console.log('Error in fetching user data: ' + JSON.stringify(err, undefined, 2));
     });
 });
 
