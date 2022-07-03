@@ -14,9 +14,10 @@ router.post("/", async (req, res) => {
         if(!user)
             return res.status(401).send({message: "Invalid email or password !!"});
         
-        const validPassword = bcrypt.compare(req.body.password, user.password);
+        const validPassword = await bcrypt.compare(req.body.password, user.password);
         if(!validPassword)
-        return res.status(401).send({message: "Invalid email or password !!"});
+            return res.status(401).send({message: "Invalid email or password !!"});
+        console.log("password validation: " + validPassword);
 
         const token = user.generateAuthToken();
         res.status(200).send({ data: token, message: "User logged in successfully ..." });
