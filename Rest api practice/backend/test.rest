@@ -2,10 +2,10 @@ POST  http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "firstName" : "Kazi abdul awal",
-    "lastName" : "Muktadir 2",
-    "email" : "kaziabdullah@gmail.com",
-    "password" : "Iit@1234iit"
+    "firstName" : "Mehedi islam",
+    "lastName" : "nahin",
+    "email" : "kollanpur@gmail.com",
+    "password" : "GayFucks69/"
     
 }
 
