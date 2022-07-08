@@ -2,10 +2,10 @@ POST  http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "firstName" : "Mehedi islam",
-    "lastName" : "nahin",
-    "email" : "kollanpur@gmail.com",
-    "password" : "GayFucks69/"
+    "firstName" : "Mehedi",
+    "lastName" : "na",
+    "email" : "kollanpurano@gmail.com",
+    "password" : "GoruChagol420/"
     
 }
 
@@ -20,7 +20,7 @@ POST http://localhost:3000/api/auth
 Content-Type: application/json
 
 {
-    "email" : "kaziabdullah@gmail.com",
-    "password" : "Iit@1234iit"
+    "email" : "kollanpurano@gmail.com",
+    "password" : "GoruChagol420/"
     
 }
