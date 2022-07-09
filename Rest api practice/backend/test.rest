@@ -2,10 +2,10 @@ POST  http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "firstName" : "Mehedi",
-    "lastName" : "na",
-    "email" : "kollanpurano@gmail.com",
-    "password" : "GoruChagol420/"
+    "firstName" : "Jannet",
+    "lastName" : "Rose",
+    "email" : "rosejanet@gmail.com",
+    "password" : "//Jan3tR0se//"
     
 }
 
@@ -20,8 +20,8 @@ POST http://localhost:3000/api/auth
 Content-Type: application/json
 
 {
-    "email" : "kollanpurano@gmail.com",
-    "password" : "GoruChagol420/"
+    "email" : "rosejanet@gmail.com",
+    "password" : "//Jan3tR0se//"
 }
 
 ###
@@ -30,7 +30,7 @@ POST http://localhost:3000/api/post
 Content-Type: application/json
 
 {
-    "message": "bill er vitor mil koira jil pare jongole modern kobi lekhe",
-    "date": "ajker  din",
-    "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6Ik1laGVkaSBuYSIsImlhdCI6MTY1NzM1NjY5MywiZXhwIjoxNjU3OTYxNDkzfQ.qRl-giGwsxFR5A0tfCDSjDQetaCGQst-ML6EeRvC-Vw"
-}
+    "message": "Hello this is a test post status to check the backend of the sample social media platforme the I'm developing.\n Thank you for reading thus far and good luck for the future",
+    "date": "9th Jul 2022",
+    "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6Ikphbm5ldCBSb3NlIiwiaWF0IjoxNjU3MzgwMDc0LCJleHAiOjE2NTc5ODQ4NzR9.7O0QjOSOalVC6LuTkcd57r2LAig8FYvkb49tcpI8Vt0"
+    }

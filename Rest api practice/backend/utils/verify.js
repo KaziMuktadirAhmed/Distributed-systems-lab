@@ -7,11 +7,8 @@ function verifyUser (tokenToBeVerified) {
         return returnVal;
 
     const isValid = jwt.verify(tokenToBeVerified, process.env.JWT_PVT_KEY, (err, userInfo) => {
-        if(err)    return;
-
-        console.log("user info from jwt token: ");
-        console.log(userInfo);
-        
+        if(err)    
+            return;
         returnVal = userInfo.fullName;
     });
 

@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-const Joi = require('joi');
 
 const postSchema = new mongoose.Schema({
     fullName: {type: String, reuired: true},
