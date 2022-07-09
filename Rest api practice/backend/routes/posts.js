@@ -1,15 +1,16 @@
 const router = require('express').Router();
 const Joi = require('joi');
 const {Post} = require('../models/post.js');
-const verifyUser = require('../utils/verify.js');
+const verify = require('../utils/verify.js');
 
 router.post("/", (req, res) => {
     try {
         const {error} = validate(req.body);
         if(error)
             return res.status(400).send({message: error.details[0].message});
-
-        const hasValidToken = verifyUser.verifyUser(req.body.jwtToken);
+            
+        const hasValidToken = verify.verifyUser(req.body.jwtToken);
+        console.log('koi vai');
         
         if(hasValidToken){
             new Post({
@@ -25,7 +26,7 @@ router.post("/", (req, res) => {
             res.status(401).send({ message: "Invlaid token !!!"});
         
     } catch (error) {
-        res.status(500).send({ message: "Internal Server Error" });
+        res.status(500).send({ message: "Internal Server Error at post" });
     }
 });
 
