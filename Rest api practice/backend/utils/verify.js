@@ -1,17 +1,21 @@
 const jwt = require('jsonwebtoken');
 
 function verifyUser (tokenToBeVerified) {
-    if (tokenToBeVerified == null) return false;
+    var returnVal = "";
+
+    if (tokenToBeVerified == null) 
+        return returnVal;
 
     const isValid = jwt.verify(tokenToBeVerified, process.env.JWT_PVT_KEY, (err, userInfo) => {
-        if(err) return false;
+        if(err)    return;
 
         console.log("user info from jwt token: ");
         console.log(userInfo);
-        return true;
+        
+        returnVal = userInfo.fullName;
     });
 
-    return isValid;
+    return returnVal;
 } 
 
 module.exports = {verifyUser};

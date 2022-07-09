@@ -9,12 +9,11 @@ router.post("/", (req, res) => {
         if(error)
             return res.status(400).send({message: error.details[0].message});
             
-        const hasValidToken = verify.verifyUser(req.body.jwtToken);
-        console.log('koi vai');
+        const hasFullName = verify.verifyUser(req.body.jwtToken);
         
-        if(hasValidToken){
+        if(hasFullName){
             new Post({
-                fullName: req.body.fullName,
+                fullName: hasFullName,
                 message: req.body.message,
                 date: req.body.date,
             }).save((err, doc) => {
@@ -32,7 +31,7 @@ router.post("/", (req, res) => {
 
 const validate = (data) => {
 	const schema = Joi.object({
-		fullName: Joi.string().required().label("Full name"),
+		fullName: Joi.string().label("Full name"),
 		message: Joi.string().label("Message"),
         date: Joi.string().required().label("Date"),
         jwtToken: Joi.string().required().label("Jwt-token"),

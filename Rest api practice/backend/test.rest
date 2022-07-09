@@ -30,7 +30,6 @@ POST http://localhost:3000/api/post
 Content-Type: application/json
 
 {
-    "fullName": "abdullah",
     "message": "bill er vitor mil koira jil pare jongole modern kobi lekhe",
     "date": "ajker  din",
     "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6Ik1laGVkaSBuYSIsImlhdCI6MTY1NzM1NjY5MywiZXhwIjoxNjU3OTYxNDkzfQ.qRl-giGwsxFR5A0tfCDSjDQetaCGQst-ML6EeRvC-Vw"
