@@ -11,15 +11,4 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model("post", postSchema);
 
-const validate = (data) => {
-	const schema = Joi.object({
-		fullName: Joi.string().required().label("Full Name"),
-		message: Joi.string().label("Message"),
-		date: Joi.string().required().label("Date"),
-        jwtToken: Joi.string().required().label("Token"),
-	});
-    
-	return schema.validate(data);
-};
-
-module.exports = {Post, validate};
+module.exports = {Post};
