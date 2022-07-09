@@ -18,7 +18,7 @@ router.post("/", (req, res) => {
                 message: req.body.message,
                 date: req.body.date,
             }).save((err, doc) => {
-                if(err) res.status(402).send({ message: "Error at saving post data !!!"});
+                if(err) res.status(402).send({ message: "Error at saving post data !!!", error: err});
                 else res.status(200).send({ message: "Post saved successfully ..." });
             });
         }
