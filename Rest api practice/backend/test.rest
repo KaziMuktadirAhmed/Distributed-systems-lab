@@ -32,5 +32,5 @@ Content-Type: application/json
 {
     "message": "Hello this is a test post status to check the backend of the sample social media platforme the I'm developing.\n Thank you for reading thus far and good luck for the future",
     "date": "9th Jul 2022",
-    "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6Ikphbm5ldCBSb3NlIiwiaWF0IjoxNjU3MzgwMDc0LCJleHAiOjE2NTc5ODQ4NzR9.7O0QjOSOalVC6LuTkcd57r2LAig8FYvkb49tcpI8Vt0"
-    }
+    "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6Ikphbm5ldCBSb3NlIiwiaWF0IjoxNjU3NDYzNjk1LCJleHAiOjE2NTgwNjg0OTV9.dECPWWuOC1ZMDlpIMKelScNtF5Iy_AhekBRr85PKpBs"
+}
