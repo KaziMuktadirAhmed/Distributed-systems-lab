@@ -34,3 +34,8 @@ Content-Type: application/json
     "date": "11th Jul 2022",
     "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkthemkgTXVrdGFkaXIgQWhtZWQiLCJpYXQiOjE2NTc1Mzg3NTEsImV4cCI6MTY1ODE0MzU1MX0.G8GUnop9KxYS3MN_qUX4BJZLRTQ7HIQfXSwFQrsUIUk"
 }
+
+###
+
+GET http://localhost:3000/api/post
+Content-Type: application/json

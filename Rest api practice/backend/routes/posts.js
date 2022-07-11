@@ -3,6 +3,15 @@ const Joi = require('joi');
 const {Post} = require('../models/post.js');
 const verify = require('../utils/verify.js');
 
+router.get('/', (req, res) => {
+    Post.find((err, doc) => {
+        if(!err)    
+            res.send(doc);
+        else
+            console.log('Error in fetching user data: ' + JSON.stringify(err, undefined, 2));
+    });
+});
+
 router.post("/", (req, res) => {
     try {
         const {error} = validate(req.body);
