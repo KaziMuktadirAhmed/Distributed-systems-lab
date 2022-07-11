@@ -2,10 +2,10 @@ POST  http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "firstName" : "Kazi Muktadir",
-    "lastName" : "Ahmed",
-    "email" : "kazisujoy@gmail.com",
-    "password" : "//Bsse1111//"
+    "firstName" : "Kazi Maruf",
+    "lastName" : "Rahim",
+    "email" : "maruf007@gmail.com",
+    "password" : "//Maruf007//"
     
 }
 
@@ -20,8 +20,8 @@ POST http://localhost:3000/api/auth
 Content-Type: application/json
 
 {
-    "email" : "kazisujoy@gmail.com",
-    "password" : "//Bsse1111//"
+    "email" : "maruf007@gmail.com",
+    "password" : "//Maruf007//"
 }
 
 ###
@@ -30,9 +30,9 @@ POST http://localhost:3000/api/post
 Content-Type: application/json
 
 {
-    "message": "Hello this is a test post status to check the backend of the sample social media platforme the I'm developing.\n Thank you for reading thus far and good luck for the future",
+    "message": "Kmf er 1st status vai re vai",
     "date": "11th Jul 2022",
-    "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkthemkgTXVrdGFkaXIgQWhtZWQiLCJpYXQiOjE2NTc1Mzg3NTEsImV4cCI6MTY1ODE0MzU1MX0.G8GUnop9KxYS3MN_qUX4BJZLRTQ7HIQfXSwFQrsUIUk"
+    "jwtToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkthemkgTWFydWYgUmFoaW0iLCJpYXQiOjE2NTc1NDA2NDMsImV4cCI6MTY1ODE0NTQ0M30.9vhb7cQ5qd6sSr-oLGU-s-3nehsa9pAdvI9a3SpkBb8"
 }
 
 ###

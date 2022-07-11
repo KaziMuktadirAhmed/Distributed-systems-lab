@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, salt);
 
         // storing user data and password hash in db
-        await new User({
+        new User({
             ...req.body,
             password: hashPassword 
         }).save((err, doc) => {
