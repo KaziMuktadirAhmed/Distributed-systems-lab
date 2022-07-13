@@ -1,4 +1,5 @@
 require("dotenv").config();
+const minio = require('minio')
 
 // import node pakage 
 const express = require("express");
