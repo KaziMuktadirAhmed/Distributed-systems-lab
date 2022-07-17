@@ -6,6 +6,7 @@ const cors = require("cors");
 
 // import db connection file
 const connectDB = require("./db.js");
+const connectObjectDb = require("./dbObject.js");
 
 //import routes 
 const usersRoute = require('./routes/users.js');
@@ -16,6 +17,7 @@ const app = express();
 
 // DB connection
 connectDB();
+connectObjectDb();
 
 // middlewares
 app.use(express.json());

@@ -18,8 +18,10 @@
     "joi": "^17.6.0",
     "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
-    "minio": "^7.0.29",
     "mongoose": "^6.4.2",
     "nodemon": "^2.0.18"
+  },
+  "devDependencies": {
+    "minio": "^7.0.29"
   }
 }
