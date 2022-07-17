@@ -1,32 +1,32 @@
-POST  http://localhost:3000/api/users
+POST  http://localhost:3001/api/users
 Content-Type: application/json
 
 {
     "firstName" : "Kazi Maruf",
     "lastName" : "Rahim",
-    "email" : "maruf007@gmail.com",
+    "email" : "maruf0079@gmail.com",
     "password" : "//Maruf007//"
     
 }
 
 ###
 
-GET http://localhost:3000/api/users
+GET http://localhost:3001/api/users
 Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/api/auth
+POST http://localhost:3001/api/auth
 Content-Type: application/json
 
 {
-    "email" : "maruf007@gmail.com",
+    "email" : "maruf0079@gmail.com",
     "password" : "//Maruf007//"
 }
 
 ###
 
-POST http://localhost:3000/api/post
+POST http://localhost:3001/api/post
 Content-Type: application/json
 
 {
@@ -37,5 +37,21 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/api/post
+GET http://localhost:3001/api/post
 Content-Type: application/json
+
+###
+
+POST http://localhost:3001/api/post/image
+Content-Type: application/json
+
+{
+    "fileName": "test-from-backend-api.jpg",
+    "filePath": "/home/kazimuktadir/Downloads/bud-helisson-kqguzgvYrtM-unsplash.jpg",
+    "metaData": {
+        "Content-Type": "application/octet-stream",
+        "X-Amz-Meta-Testing": 1234,
+        "example": 5678,
+        "username": "kamal"
+    }
+}
