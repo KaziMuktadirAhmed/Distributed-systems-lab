@@ -46,11 +46,9 @@ router.post("/image", (req, res) => {
         var metaData = req.body.metaData;
         var fileName = req.body.fileName;
 
-        console.log("prooblem ase ?")
-
-        minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
-            if (err) return console.log(err)
-            console.log('File uploaded successfully.')
+        Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
+            if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
+            res.status(200).send({ message: "Image saved successfully ..." });
         });
     } catch (error) {
         res.status(500).send({ message: "Internal Server Error at posting image" });

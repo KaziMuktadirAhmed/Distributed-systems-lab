@@ -46,7 +46,7 @@ POST http://localhost:3001/api/post/image
 Content-Type: application/json
 
 {
-    "fileName": "test-from-backend-api.jpg",
+    "fileName": "test-from-backend.jpg",
     "filePath": "/home/kazimuktadir/Downloads/bud-helisson-kqguzgvYrtM-unsplash.jpg",
     "metaData": {
         "Content-Type": "application/octet-stream",

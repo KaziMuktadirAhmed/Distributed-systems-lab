@@ -17,7 +17,7 @@ const app = express();
 
 // DB connection
 connectDB();
-connectObjectDb();
+console.log("connected minio object storage at: http://" + connectObjectDb.minioClient.host + ":" + connectObjectDb.minioClient.port);
 
 // middlewares
 app.use(express.json());
