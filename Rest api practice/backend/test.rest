@@ -2,10 +2,10 @@ POST  http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-    "firstName" : "Kazi Maruf",
-    "lastName" : "Rahim",
-    "email" : "maruf0079@gmail.com",
-    "password" : "//Maruf007//"
+    "firstName" : "Fahim",
+    "lastName" : "Morshed",
+    "email" : "bsse1102@iit.du.ac.bd",
+    "password" : "//Temujin007//"
     
 }
 
@@ -20,8 +20,8 @@ POST http://localhost:3001/api/auth
 Content-Type: application/json
 
 {
-    "email" : "maruf0079@gmail.com",
-    "password" : "//Maruf007//"
+    "email" : "bsse1102@iit.du.ac.bd",
+    "password" : "//Temujin007//"
 }
 
 ###
@@ -30,9 +30,9 @@ POST http://localhost:3001/api/post
 Content-Type: application/json
 
 {
-    "message": "Kmf er 1st status vai re vai",
-    "date": "11th Jul 2022",
-    "jwtToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkthemkgTWFydWYgUmFoaW0iLCJpYXQiOjE2NTc1NDA2NDMsImV4cCI6MTY1ODE0NTQ0M30.9vhb7cQ5qd6sSr-oLGU-s-3nehsa9pAdvI9a3SpkBb8"
+    "message": "ami ghumaitasi",
+    "date": "18th Jul 2022",
+    "jwtToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkZhaGltIE1vcnNoZWQiLCJpYXQiOjE2NTgxMjQxMDAsImV4cCI6MTY1ODcyODkwMH0.bGzwQgEO0_Y6-JbN5vsADjWF0pYsGJ4k160m9pEG71Q"
 }
 
 ###
@@ -46,12 +46,14 @@ POST http://localhost:3001/api/post/image
 Content-Type: application/json
 
 {
-    "fileName": "test-from-backend.jpg",
-    "filePath": "/home/kazimuktadir/Downloads/1.jpg",
+    "fileName": "test-from-fahim.jpg",
+    "filePath": "/home/kazimuktadir/Downloads/img_snowtops.jpg",
     "metaData": {
         "Content-Type": "application/octet-stream",
         "X-Amz-Meta-Testing": 1234,
         "example": 5678,
-        "username": "iit"
+        "username": "fahim-iit"
     }
 }
+
+###
