@@ -32,7 +32,7 @@ Content-Type: application/json
 {
     "message": "ami ghumaitasi",
     "date": "18th Jul 2022",
-    "jwtToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkZhaGltIE1vcnNoZWQiLCJpYXQiOjE2NTgxMjY4MjAsImV4cCI6MTY1ODczMTYyMH0.2YzCZtp-iNawACSewN0hhkxoOA-Yx7fni-O2VlxOlY0"
+    "jwtToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkZhaGltIE1vcnNoZWQiLCJpYXQiOjE2NTgxNTU3NzQsImV4cCI6MTY1ODc2MDU3NH0.E_Ot51egDFjuIdbhnbv3jLzobQLeDAgn8CJfoYGfSnM"
 }
 
 ###
@@ -47,7 +47,7 @@ Content-Type: application/json
 
 {
     "fileName": "test-from-fahim-again.jpg",
-    "filePath": "/home/kazimuktadir/Downloads/img_snowtops.jpg",
+    "filePath": "/home/kazimuktadir/Downloads/bud-helisson-kqguzgvYrtM-unsplash.jpg",
     "metaData": {
         "Content-Type": "application/octet-stream",
         "X-Amz-Meta-Testing": 1234,
