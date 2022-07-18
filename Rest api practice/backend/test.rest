@@ -46,12 +46,12 @@ POST http://localhost:3001/api/post/image
 Content-Type: application/json
 
 {
-    "fileName": "test-from-backend12.jpg",
-    "filePath": "/home/kazimuktadir/Downloads/bud-helisson-kqguzgvYrtM-unsplash.jpg",
+    "fileName": "test-from-backend.jpg",
+    "filePath": "/home/kazimuktadir/Downloads/1.jpg",
     "metaData": {
         "Content-Type": "application/octet-stream",
         "X-Amz-Meta-Testing": 1234,
         "example": 5678,
-        "username": "kamal"
+        "username": "iit"
     }
 }
