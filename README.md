@@ -3,7 +3,7 @@ Hello this is the first commit for the distributed systems lab repository
 Databaser server staring commands
 
 # mongodb
-sudo service mongod start
+sudo service mongod start <br>
 sudo service mongod status
 
 # minio
