@@ -4,8 +4,8 @@ Databaser server staring commands
 
 # mongodb
 
-<i> sudo service mongod start </i> <br>
-<i> sudo service mongod status </i>
+`sudo service mongod start` <br>
+`sudo service mongod status`
 
 # minio
-sudo MINIO_ROOT_USER=minio MINIO_ROOT_PASSWORD=miniostorage minio server minio-storage --console-address ":9001"
+`sudo MINIO_ROOT_USER=minio MINIO_ROOT_PASSWORD=miniostorage minio server minio-storage --console-address ":9001"`
