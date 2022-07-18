@@ -8,5 +8,5 @@ Databaser server staring commands
 `sudo service mongod status`
 
 # minio
-`sudo touch minio-storage`
+`sudo touch minio-storage` <br>
 `sudo MINIO_ROOT_USER=minio MINIO_ROOT_PASSWORD=miniostorage minio server minio-storage --console-address ":9001"`
