@@ -9,7 +9,8 @@ This is a NoSQL database server for storing user data from login and registratio
 ### `sudo service mongod start` 
 Starts the mongodb service
 ### `sudo service mongod status`
-Shows the current status of mongodb service 
+Shows the current status of mongodb service
+
 ## MinIO
 Database server for object storage. Used for storing images form the application.
 
