@@ -2,4 +2,12 @@
 .leftbar {
     flex: 3;
     height: calc(100vh - 50px);
+    background-color: ivory;
+    overflow-y: scroll;
+    position: sticky;
+    top: 50px;
+}
+
+.leftbarWrapper {
+    padding: 20%;
 }
