@@ -2,12 +2,27 @@
 .leftbar {
     flex: 3;
     height: calc(100vh - 50px);
-    background-color: ivory;
     overflow-y: scroll;
     position: sticky;
     top: 50px;
 }
 
 .leftbarWrapper {
-    padding: 20%;
+    padding: 20px;
+}
+
+.leftbarList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.leftbarListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.leftbarIcon {
+    margin-right: 15px;
 }
