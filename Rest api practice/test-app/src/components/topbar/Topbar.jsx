@@ -7,10 +7,15 @@ export default function Topbar() {
       <div className="topbarLeft">
         <span className="logo">FreeBook</span>
       </div>
-      <div className="topbarCenter"></div>    
-        <div className="serachbar"></div>
-        <Search />
-        <input placeholder="Search for anything" className="searchInput" />
+      <div className="topbarCenter">    
+        <div className="searchbar">
+          <Search className="searchIcon" />
+          <input 
+            placeholder="Search for anything" 
+            className="searchInput" 
+          />
+        </div>
+      </div>
       <div className="topbarRight">
         <div className="topbarLink">
           <span className="topbarLink">Homepage</span>
