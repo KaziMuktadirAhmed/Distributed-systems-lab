@@ -1,6 +1,6 @@
 /* leftbar style */
 .leftbar {
-    flex: 2;
+    flex: 3;
     height: calc(100vh - 50px);
     overflow-y: scroll;
     position: sticky;
