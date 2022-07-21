@@ -3,9 +3,9 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 
 function App() {
-  return <Register />;
+  // return <Register />;
   // return <Login/>;
-  // return <Home />;
+  return <Home />;
 }
 
 export default App;

@@ -47,8 +47,8 @@ export default function Leftbar() {
                     <span className="leftbarListItemText">Courses</span>
                 </li>
             </ul>
-            <button className='leftbarButton'>see more</button>
             <hr className="sidebarHr" />
+            <button className='leftbarButton'>see more</button>
             {/* <ul className="sidebarFriendList"></ul> */}
         </div>
     </div>
