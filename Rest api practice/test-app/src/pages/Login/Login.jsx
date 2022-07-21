@@ -27,7 +27,7 @@ export default function Login() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">Zucccbook</h3>
+          <h3 className="loginLogo">Freakbook</h3>
           <span className="loginDesc">
             Connect with someone and do the thing
           </span>

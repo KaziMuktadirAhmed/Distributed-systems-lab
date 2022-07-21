@@ -27,7 +27,7 @@ export default function Register() {
     <div className="register">
       <div className="registerWrapper">
         <div className="registerLeft">
-          <h3 className="registerLogo">Zucccbook</h3>
+          <h3 className="registerLogo">Freakbook</h3>
           <span className="registerDesc">
             Connect with someone and do the thing
           </span>
