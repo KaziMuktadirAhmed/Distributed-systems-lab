@@ -40,7 +40,7 @@
 
 .searchInput {
    border: none;
-   width: 70%; 
+   width: 85%; 
 }
 
 .searchInput:focus{
@@ -57,7 +57,9 @@
 
 .topbarLink {
     margin-right: 10px;
-    font-size: 14px;
+    margin-left: 10px;
+    font-size: 18px;
+    font-family: 'fantasy';
     cursor: pointer;
 }
 

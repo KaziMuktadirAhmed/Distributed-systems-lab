@@ -1,6 +1,6 @@
 /* leftbar style */
 .leftbar {
-    flex: 3;
+    flex: 2;
     height: calc(100vh - 50px);
     overflow-y: scroll;
     position: sticky;
@@ -25,4 +25,20 @@
 
 .leftbarIcon {
     margin-right: 15px;
+}
+
+.leftbarListItemText {
+    font-weight: 400;
+}
+
+.leftbarButton {
+    width: 150px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.leftbarHr {
+    margin: 20px 0;
 }
