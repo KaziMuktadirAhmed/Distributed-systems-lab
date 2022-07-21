@@ -3,7 +3,7 @@ const Joi = require('joi');
 
 const {Post} = require('../models/post.js');
 const verify = require('../utils/verify.js');
-const Minio = require('../dbObject.js');
+const Minio = require('../db/dbObject.js');
 
 router.get('/', (req, res) => {
     Post.find((err, doc) => {

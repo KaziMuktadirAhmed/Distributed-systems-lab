@@ -6,8 +6,8 @@ const cors = require("cors");
 const cookieParser = require('cookie-parser');
 
 // import db connection file
-const connectDB = require("./db.js");
-const connectObjectDb = require("./dbObject.js");
+const connectDB = require("./db/db.js");
+const connectObjectDb = require("./db/dbObject.js");
 
 //import routes 
 const usersRoute = require('./routes/users.js');
