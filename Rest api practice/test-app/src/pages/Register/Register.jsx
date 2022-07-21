@@ -34,6 +34,8 @@ export default function Register() {
         </div>
         <div className="registerRight">
           <div className="registerBox">
+            <input ref={emailRef} placeholder="First Name" className="registerInput" />
+            <input ref={emailRef} placeholder="Last Name" className="registerInput" />
             <input ref={emailRef} placeholder="Email" className="registerInput" />
             <input
               ref={passwordRef}
@@ -41,10 +43,15 @@ export default function Register() {
               className="registerInput"
               type="password"
             />
+            <input
+              ref={passwordRef}
+              placeholder="Confirm Password"
+              className="registerInput"
+              type="password"
+            />
             <button className="registerButton" onClick={handleSubmit}>
               Sign up
             </button>
-            <span className="registerForgot">Forgot password ?</span>
             <button className="registerLoginButton">
               Log into Account
             </button>
