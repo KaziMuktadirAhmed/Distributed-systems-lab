@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import "./Login.css";
+import "./Register.css";
 
-export default function Login() {
+export default function Register() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -24,29 +24,29 @@ export default function Login() {
   };
 
   return (
-    <div className="login">
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">Zucccbook</h3>
-          <span className="loginDesc">
+    <div className="register">
+      <div className="registerWrapper">
+        <div className="registerLeft">
+          <h3 className="registerLogo">Zucccbook</h3>
+          <span className="registerDesc">
             Connect with someone and do the thing
           </span>
         </div>
-        <div className="loginRight">
-          <div className="loginBox">
-            <input ref={emailRef} placeholder="Email" className="loginInput" />
+        <div className="registerRight">
+          <div className="registerBox">
+            <input ref={emailRef} placeholder="Email" className="registerInput" />
             <input
               ref={passwordRef}
               placeholder="Password"
-              className="loginInput"
+              className="registerInput"
               type="password"
             />
-            <button className="loginButton" onClick={handleSubmit}>
-              Log in
+            <button className="registerButton" onClick={handleSubmit}>
+              Sign up
             </button>
-            <span className="loginForgot">Forgot password ?</span>
-            <button className="loginRegisterButton">
-              Create a new Account
+            <span className="registerForgot">Forgot password ?</span>
+            <button className="registerLoginButton">
+              Log into Account
             </button>
           </div>
         </div>
