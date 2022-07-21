@@ -22,7 +22,9 @@ export default function Register() {
         password: passwordRef.current.value,
       }),
     }).then(response => response.json()).then(
-        obj => console.log(obj)
+        obj => {
+          alert(obj.message);
+        }
     );
   };
 
