@@ -19,6 +19,11 @@ router.post("/", async (req, res) => {
             return res.status(401).send({message: "Invalid email or password !!"});
 
         const token = user.generateAuthToken();
+        res.cookie("jwt", token, {
+            httpOnly: true,
+            secure: false,
+            sameSite: "none"
+        });
         res.status(200).send({ jwtToken: token, message: "User logged in successfully ..." });
         
     } catch (error) {

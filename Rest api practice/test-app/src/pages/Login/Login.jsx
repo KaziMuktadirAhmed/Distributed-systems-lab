@@ -11,10 +11,14 @@ export default function Login() {
       headers: {
         "Content-Type": "application/json",
       },
+
+      credentials: "include",
       body: JSON.stringify({
         email: emailRef.current.value,
         password: passwordRef.current.value,
-      }),
+      }
+      
+      ),
     }).then(response => response.json()).then(
         obj => console.log(obj)
     );

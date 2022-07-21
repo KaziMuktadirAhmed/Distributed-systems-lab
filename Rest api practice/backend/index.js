@@ -3,6 +3,7 @@ require("dotenv").config();
 // import node pakage 
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
 
 // import db connection file
 const connectDB = require("./db.js");
@@ -21,7 +22,11 @@ console.log("connected minio object storage at: http://" + connectObjectDb.minio
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "http://10.100.104.14:3000"],
+  credentials: true
+}));
+app.use(cookieParser());
 
 // routes
 app.use('/api/users', usersRoute);
