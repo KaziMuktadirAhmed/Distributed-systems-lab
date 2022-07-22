@@ -4,6 +4,7 @@ import { MoreVert } from '@material-ui/icons';
 
 export default function Post() {
     const postProfileName = "Something";
+    var postMessage = "Such a load of crap shit";
     var postProfileImg = "";
     const postDate = new Date();
 
@@ -27,7 +28,7 @@ export default function Post() {
             </div>
             <div className="postCenter">
                 <span className="postText">
-                    This is something alright.
+                    { postMessage }
                 </span>
             </div>
             <div className="postBottom">
