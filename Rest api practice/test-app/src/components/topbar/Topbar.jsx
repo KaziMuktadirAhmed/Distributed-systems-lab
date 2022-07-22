@@ -2,6 +2,13 @@ import "./Topbar.css"
 import { Search, Person, Chat, Notifications } from "@material-ui/icons"
 
 export default function Topbar() {
+  const userImg = "";
+
+  const checkUserImg = () => {
+    if (userImg === "")
+      return "./assets/defaultImg.png";
+  }
+
   return (
     <div className = "topbarContainer">
       <div className="topbarLeft">
@@ -34,9 +41,9 @@ export default function Topbar() {
             <Notifications />
             <span className="topbarIconBadge">1</span>
           </div>
-          <img src="/assets/apex-blood-01-esportimes-1.jpg" alt="" className="topbarImg" />
+          <img src={ checkUserImg() } alt="" className="topbarImg" />
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -3,11 +3,18 @@ import './Share.css'
 import {PermMedia, Label, Room, EmojiEmotions} from '@material-ui/icons'
 
 export default function Share() {
+  const userImg = "";
+
+  const checkUserImg = () => {
+    if (userImg === "")
+      return "./assets/defaultImg.png"
+  }
+
   return (
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src="/assets/person/1.jpeg" alt="" />
+          <img className="shareProfileImg" src={ checkUserImg() } alt="Img" />
           <input
             placeholder="What's in your mind ?"
             className="shareInput"
