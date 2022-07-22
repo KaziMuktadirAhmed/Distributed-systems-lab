@@ -1,8 +1,10 @@
 // newsfeed
+import "./Feed.css";
 
 import Post from "../post/Post";
 import Share from "../share/Share";
-import "./Feed.css";
+
+import { Posts } from "../../dummyData";
 
 export default function Feed() {
   // const srcList = [
@@ -15,12 +17,11 @@ export default function Feed() {
   return (
     <div className="feed">
       <Share />
-      <Post />
-      {/* {srcList.map((src) => {
-        return <img src={src} width="650px" height="500px" alt="wraith waifu" style={{
-          margin: '20px'
-        }}/>;
-      })} */}
+      { 
+        Posts.map((p) => {
+          return <Post key = { p.key } post = { p } />;
+        }) 
+      }
 
     </div>
   );

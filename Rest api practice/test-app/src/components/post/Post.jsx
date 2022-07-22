@@ -2,11 +2,11 @@ import './Post.css';
 
 import { MoreVert } from '@material-ui/icons';
 
-export default function Post() {
-    const postProfileName = "Something";
-    var postMessage = "Such a load of crap shit";
+export default function Post({ post }) {
+    const postProfileName = post.username;
+    var postMessage = post?.desc;
     var postProfileImg = "";
-    const postDate = new Date();
+    const postDate = post.date;
 
     const checkProfileImg = () => {
         if (postProfileImg === "" )
@@ -20,7 +20,7 @@ export default function Post() {
                 <div className="postTopLeft">
                     <img src={ checkProfileImg() } alt="image" className="postProfileImg" />
                     <span className="postProfileName">{ postProfileName }</span>
-                    <span className="postDate">{ postDate.toDateString() }</span>
+                    <span className="postDate">{ postDate }</span>
                 </div>
                 <div className="postTopRight">
                     <MoreVert />
