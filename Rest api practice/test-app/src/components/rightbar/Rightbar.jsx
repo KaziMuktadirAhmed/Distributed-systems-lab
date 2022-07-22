@@ -2,6 +2,20 @@
 import './Rightbar.css'
 
 export default function Rightbar() {
+  const userImg = "";
+  const userName = "";
+
+  const checkUserImg = () => {
+    if (userImg === "")
+      return "./assets/defaultImg.png";
+  }
+
+  const checkUserName = () => {
+
+    if(userName === "")
+      return "Something";
+  }
+
   return (
     <div className='rightbar'>
         <div className="rightbarWrapper">
@@ -12,8 +26,20 @@ export default function Rightbar() {
             </span>
           </div>
           <img src="./assets/randomAd.png" alt="Random add for more belivability" className="rightbarAd" />
-          <h4 className="rightbarFriendList">Friends</h4>
-
+          <h4 className="rightbarTitle">Friends</h4>
+          <ul className="rightbarFriendList">
+            <li className="rightbarFriend">
+              <div className="rightbarProfileImgContainer">
+                <img 
+                  src={ checkUserImg() } 
+                  alt="profile image" 
+                  className="rightbarProfileImg" 
+                />
+                <span className="rightbarOnline"></span>
+              </div>
+              <span className="rightbarUsername">{ checkUserName() }</span>
+            </li>
+          </ul>
         </div>
     </div>
   )
