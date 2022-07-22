@@ -9,7 +9,7 @@
 .postWrapper {
     padding: 10px;
 }
-  
+
 .postTop {
     display: flex;
     align-items: center;
@@ -17,10 +17,11 @@
 }
 
 .postTopLeft {
+    width: 80%;
     display: flex;
     align-items: center;
 }
-  
+
 .postProfileImg {
     width: 32px;
     height: 32px;
@@ -33,7 +34,7 @@
     font-weight: 500;
     margin: 0 10px;
 }
-  
+
 .postDate{
     font-size: 12px;
 }
