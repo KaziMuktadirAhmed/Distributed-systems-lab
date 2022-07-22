@@ -41,7 +41,7 @@ export default function Login() {
               className="loginInput"
               type="password"
             />
-            <button className="loginButton" onClick={handleSubmit}>
+            <button className="loginButton" onClick={ handleSubmit }>
               Log in
             </button>
             <span className="loginForgot">Forgot password ?</span>
