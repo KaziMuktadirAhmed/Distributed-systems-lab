@@ -1,5 +1,6 @@
 // newsfeed
 
+import Post from "../post/Post";
 import Share from "../share/Share";
 import "./Feed.css";
 
@@ -14,6 +15,7 @@ export default function Feed() {
   return (
     <div className="feed">
       <Share />
+      <Post />
       {/* {srcList.map((src) => {
         return <img src={src} width="650px" height="500px" alt="wraith waifu" style={{
           margin: '20px'
