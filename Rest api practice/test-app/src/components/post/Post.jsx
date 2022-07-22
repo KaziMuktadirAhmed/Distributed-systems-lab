@@ -25,8 +25,16 @@ export default function Post() {
                     <MoreVert />
                 </div>
             </div>
-            <div className="postCenter"></div>
-            <div className="postBottom"></div>
+            <div className="postCenter">
+                <span className="postText">
+                    This is something alright.
+                </span>
+            </div>
+            <div className="postBottom">
+                <div className="postBottomLeft">
+                    
+                </div>
+            </div>
         </div>
     </div>
   )
