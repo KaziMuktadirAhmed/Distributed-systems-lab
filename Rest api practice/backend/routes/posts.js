@@ -39,14 +39,24 @@ router.post("/", verifyUser, (req, res) => {
 
 router.post("/image", verifyUser, upload.single('avatar'), (req, res) => {
     try {   
-        var file = req.file.buffer;
-        var metaData = req.body.metaData;
+        var filePath = "/home/kazimuktadir/Desktop/git-repo/Distributed-systems-lab/Rest api practice/backend/" + req.file.path;
+        var fileData = req.file;
         var fileName = new Date().getTime().toString() + ".png";
+        var metaData = {
+            'Content-Type': 'application/octet-stream',
+            'X-Amz-Meta-Testing': 1234,
+            'example': 5678
+        };
 
-        Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, file, metaData, function(err, etag) {
+        console.log(filePath);
+        console.log(fileData);
+        console.log(fileName);
+
+        Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
             res.status(200).send({ message: "Image saved successfully ..." });
         });
+        // res.status(200).send({ message: "file sent to backend" });
     } catch (error) {
         res.status(500).send({ message: "Internal Server Error at posting image" });
     }
