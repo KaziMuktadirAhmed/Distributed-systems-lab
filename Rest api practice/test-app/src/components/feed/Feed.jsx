@@ -28,10 +28,6 @@ export default function Feed({ fullName }) {
 
   return (
     <div className="feed">
-      {/* <form action="/profile" method="post" enctype="multipart/form-data">
-        <input type="file" name="avatar" />
-        <button type="submit">post story</button>
-      </form> */}
       <StoryReel />
       <Share renderFeed={ renderFeed } setRenderFeed={ setRenderFeed } fullName={ fullName }/>
       { 
