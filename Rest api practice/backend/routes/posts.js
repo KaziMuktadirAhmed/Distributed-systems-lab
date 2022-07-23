@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Joi = require('joi');
 
-const {Post} = require('../models/post.js');
+const { Post } = require('../models/post.js');
 const { verifyUser } = require('../utils/verify.js');
 const Minio = require('../db/dbObject.js');
 
@@ -37,13 +37,28 @@ router.post("/", verifyUser, (req, res) => {
     }
 });
 
-router.post("/image", upload.single('avatar'), (req, res) => {
+router.post("/image", verifyUser, upload.single('avatar'), (req, res) => {
     try {   
         var file = req.file.buffer;
         var metaData = req.body.metaData;
-        var fileName = req.body.fileName;
+        var fileName = new Date().getTime().toString() + ".png";
 
         Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, file, metaData, function(err, etag) {
+            if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
+            res.status(200).send({ message: "Image saved successfully ..." });
+        });
+    } catch (error) {
+        res.status(500).send({ message: "Internal Server Error at posting image" });
+    }
+});
+
+router.post("/image/path", verifyUser, (req, res) => {
+    try {   
+        var filePath = req.body.filePath;
+        var metaData = req.body.metaData;
+        var fileName = new Date().getTime().toString() + ".png";
+
+        Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
             res.status(200).send({ message: "Image saved successfully ..." });
         });
