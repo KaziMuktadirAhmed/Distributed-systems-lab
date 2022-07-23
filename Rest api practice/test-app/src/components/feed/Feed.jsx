@@ -27,6 +27,10 @@ export default function Feed() {
 
   return (
     <div className="feed">
+      <form action="/profile" method="post" enctype="multipart/form-data">
+        <input type="file" name="avatar" />
+        <button type="submit">post story</button>
+      </form>
       <Share renderFeed={ renderFeed } setRenderFeed={ setRenderFeed }/>
       { 
         posts.map((p) => {
