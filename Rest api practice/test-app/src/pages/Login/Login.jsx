@@ -20,7 +20,9 @@ export default function Login() {
       
       ),
     }).then(response => response.json()).then(
-        obj => console.log(obj)
+        obj => {
+          console.log(obj);
+        }
     );
   };
 

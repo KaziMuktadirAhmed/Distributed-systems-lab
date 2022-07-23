@@ -3,8 +3,8 @@ import './Post.css';
 import { MoreVert } from '@material-ui/icons';
 
 export default function Post({ post }) {
-    const postProfileName = post.username;
-    var postMessage = post?.desc;
+    const postProfileName = post.fullName;
+    var postMessage = post?.message;
     var postProfileImg = "";
     const postDate = post.date;
 
