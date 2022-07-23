@@ -6,6 +6,7 @@ import Share from "../share/Share";
 
 import { useState } from "react";
 import { useEffect } from "react";
+import StoryReel from "../story-reel/StoryReel";
 
 export default function Feed() {
   const [renderFeed, setRenderFeed] = useState(false);
@@ -27,10 +28,11 @@ export default function Feed() {
 
   return (
     <div className="feed">
-      <form action="/profile" method="post" enctype="multipart/form-data">
+      {/* <form action="/profile" method="post" enctype="multipart/form-data">
         <input type="file" name="avatar" />
         <button type="submit">post story</button>
-      </form>
+      </form> */}
+      <StoryReel />
       <Share renderFeed={ renderFeed } setRenderFeed={ setRenderFeed }/>
       { 
         posts.map((p) => {

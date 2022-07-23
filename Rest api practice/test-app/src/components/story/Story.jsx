@@ -1,7 +1,15 @@
 import "./Story.css"
 
-export default function Story() {
+import { Avatar } from '@mui/material'
+
+function Story({image, title}) {
+  const defaultImg = "./assets/defaultImg.png"
   return (
-    <div>Story</div>
+    <div style={{backgroundImage: `url(${image})`}} className='story'>
+    <Avatar className='story__avatar' src = { defaultImg }/>
+    <h4>{ title }</h4>
+    </div>
   )
 }
+
+export default Story
