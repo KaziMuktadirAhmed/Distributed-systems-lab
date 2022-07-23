@@ -1,5 +1,6 @@
-import { useRef } from "react";
 import "./Login.css";
+
+import { useRef } from "react";
 
 export default function Login() {
   const emailRef = useRef(null);
@@ -34,7 +35,11 @@ export default function Login() {
         </div>
         <div className="loginRight">
           <div className="loginBox">
-            <input ref={ emailRef } placeholder="Email" className="loginInput" />
+            <input 
+              ref={ emailRef } 
+              placeholder="Email" 
+              className="loginInput" 
+            />
             <input
               ref={ passwordRef }
               placeholder="Password"
