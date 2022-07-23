@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./Register.css";
 
-export default function Register() {
+export default function Register({ setType }) {
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
@@ -57,7 +57,10 @@ export default function Register() {
             <button className="registerButton" onClick={handleSubmit}>
               Sign up
             </button>
-            <button className="registerLoginButton">
+            <button 
+              className="registerLoginButton"
+              onClick={ () => setType('login') }
+            >
               Log into Account
             </button>
           </div>

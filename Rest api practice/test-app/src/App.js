@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+
 import  Login  from "./pages/Login/Login";
 import  Home  from "./pages/Home/Home";
+import Register from "./pages/Register/Register";
+import Auth from "./pages/auth/auth";
 
 function App() {
   // const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +24,8 @@ function App() {
   if(isAuthenticated)
     return <Home />
   else
-    return <Login setIsAuthenticated = { setIsAuthenticated } />
+    return <Auth setIsAuthenticated = { setIsAuthenticated } />
+  // return <Register />;
 }
 
 export default App;

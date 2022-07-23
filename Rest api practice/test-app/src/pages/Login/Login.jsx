@@ -2,7 +2,7 @@ import "./Login.css";
 
 import { useRef } from "react";
 
-export default function Login( { setIsAuthenticated } ) {
+export default function Login( { setIsAuthenticated, setType } ) {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -49,11 +49,17 @@ export default function Login( { setIsAuthenticated } ) {
               className="loginInput"
               type="password"
             />
-            <button className="loginButton" onClick={ handleSubmit }>
+            <button 
+              className="loginButton" 
+              onClick={ handleSubmit }
+            >
               Log in
             </button>
             <span className="loginForgot">Forgot password ?</span>
-            <button className="loginRegisterButton">
+            <button 
+              className="loginRegisterButton"
+              onClick={ () => setType('register') }
+            >
               Create a new Account
             </button>
           </div>
