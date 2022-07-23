@@ -2,7 +2,7 @@ import "./Login.css";
 
 import { useRef } from "react";
 
-export default function Login() {
+export default function Login( { setIsAuthenticated } ) {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -22,6 +22,7 @@ export default function Login() {
     }).then(response => response.json()).then(
         obj => {
           console.log(obj);
+          setIsAuthenticated(obj.isAuthenticated);
         }
     );
   };

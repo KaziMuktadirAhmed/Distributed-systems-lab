@@ -3,7 +3,7 @@ import './Share.css'
 import { useRef } from "react"
 import { PermMedia, Label, Room, EmojiEmotions } from '@material-ui/icons'
 
-export default function Share() {
+export default function Share({setRenderFeed }) {
   const userFullName = "Something";
   const postMsgRef = useRef(null);
   const userImg = "";
@@ -26,7 +26,10 @@ export default function Share() {
         date: new Date().toDateString()
       }),
     }).then(response => response.json()).then(
-        obj => console.log(obj)
+        obj =>{
+        console.log(obj)
+        setRenderFeed(prev => !prev)
+      }
     );
   };
 

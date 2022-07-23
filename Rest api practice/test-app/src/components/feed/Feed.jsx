@@ -5,11 +5,13 @@ import Post from "../post/Post";
 import Share from "../share/Share";
 
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Feed() {
+  const [renderFeed, setRenderFeed] = useState(false);
   const [posts, setPosts] = useState([]);
 
-  const getPosts = () => {
+  useEffect (() => {
     fetch("http://localhost:4000/api/post", {
       method: "GET",
       credentials: "include",
@@ -21,12 +23,11 @@ export default function Feed() {
           setPosts(obj);
         }
     );
-  };
+  }, [renderFeed])
 
   return (
     <div className="feed">
-      <Share />
-      { getPosts() }
+      <Share renderFeed={ renderFeed } setRenderFeed={ setRenderFeed }/>
       { 
         posts.map((p) => {
           return <Post key = { p.key } post = { p } />;
