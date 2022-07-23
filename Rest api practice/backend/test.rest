@@ -28,7 +28,7 @@ Content-Type: application/json
 
 POST http://localhost:4000/api/post
 Content-Type: application/json
-Cookie: jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkZhaGltIE1vcnNoZWQiLCJpYXQiOjE2NTg1NTc2NzgsImV4cCI6MTY1OTE2MjQ3OH0.eTT_wzhSihpx2UGVDH0SfL1gs6QAr7sYh4CTcjnBOvQ; Path=/; HttpOnly; SameSite=None;
+
 
 {
     "fullName": "dadrakhul hque",

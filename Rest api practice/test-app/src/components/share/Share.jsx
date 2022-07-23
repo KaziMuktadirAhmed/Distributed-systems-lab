@@ -1,7 +1,7 @@
 import './Share.css'
 
 import { useRef } from "react"
-import {PermMedia, Label, Room, EmojiEmotions} from '@material-ui/icons'
+import { PermMedia, Label, Room, EmojiEmotions } from '@material-ui/icons'
 
 export default function Share() {
   const userFullName = "Something";

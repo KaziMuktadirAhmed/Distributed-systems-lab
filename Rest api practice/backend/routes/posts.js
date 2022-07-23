@@ -5,7 +5,7 @@ const {Post} = require('../models/post.js');
 const { verifyUser } = require('../utils/verify.js');
 const Minio = require('../db/dbObject.js');
 
-router.get('/', (req, res) => {
+router.get('/', verifyUser, (req, res) => {
     Post.find((err, doc) => {
         if(!err)    
             res.send(doc);
