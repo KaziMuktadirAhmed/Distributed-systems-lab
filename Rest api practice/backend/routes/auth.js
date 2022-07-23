@@ -23,7 +23,13 @@ router.post("/", async (req, res) => {
             secure: false,
             sameSite: "none"
         });
-        res.status(200).send({ isAuthenticated: true, message: "User logged in successfully ..." });
+        res.status(200).send(
+            { 
+                isAuthenticated: true,
+                fullName: user.firstName + " " + user.lastName, 
+                message: "User logged in successfully ..." 
+            }
+        );
         
     } catch (error) {
         res.status(500).send({ message: "Internal Server Error" });

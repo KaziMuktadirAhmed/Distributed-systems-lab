@@ -7,13 +7,13 @@ import Feed from '../../components/feed/Feed';
 
 import './Home.css'
 
-export default function Home() {
+export default function Home({ fullName }) {
   return (
     <>
       <Topbar />
       <div className="homeContainer">
         <Leftbar />
-        <Feed />
+        <Feed fullName = { fullName }/>
         <Rightbar />
       </div>
     </>

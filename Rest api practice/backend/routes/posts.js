@@ -37,13 +37,13 @@ router.post("/", verifyUser, (req, res) => {
     }
 });
 
-router.post("/image", (req, res) => {
+router.post("/image", upload.single('avatar'), (req, res) => {
     try {   
-        var filePath = req.body.filePath;
+        var file = req.file.buffer;
         var metaData = req.body.metaData;
         var fileName = req.body.fileName;
 
-        Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
+        Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, file, metaData, function(err, etag) {
             if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
             res.status(200).send({ message: "Image saved successfully ..." });
         });

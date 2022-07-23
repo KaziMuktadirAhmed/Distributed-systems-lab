@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import StoryReel from "../story-reel/StoryReel";
 
-export default function Feed() {
+export default function Feed({ fullName }) {
   const [renderFeed, setRenderFeed] = useState(false);
   const [posts, setPosts] = useState([]);
 
@@ -33,7 +33,7 @@ export default function Feed() {
         <button type="submit">post story</button>
       </form> */}
       <StoryReel />
-      <Share renderFeed={ renderFeed } setRenderFeed={ setRenderFeed }/>
+      <Share renderFeed={ renderFeed } setRenderFeed={ setRenderFeed } fullName={ fullName }/>
       { 
         posts.map((p) => {
           return <Post key = { p.key } post = { p } />;

@@ -3,8 +3,8 @@ import './Share.css'
 import { useRef } from "react"
 import { PermMedia, Label, Room, EmojiEmotions } from '@material-ui/icons'
 
-export default function Share({setRenderFeed }) {
-  const userFullName = "Something";
+export default function Share({setRenderFeed, fullName}) {
+  const userFullName = fullName;
   const postMsgRef = useRef(null);
   const userImg = "";
 
@@ -40,7 +40,7 @@ export default function Share({setRenderFeed }) {
           <img className="shareProfileImg" src={ checkUserImg() } alt="Img" />
           <input
             ref = { postMsgRef }
-            placeholder="What's in your mind ?"
+            placeholder={ "what's on your mind " + fullName + " ?" }
             className="shareInput"
           />
         </div>
