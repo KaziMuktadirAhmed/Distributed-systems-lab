@@ -5,15 +5,13 @@ import {PermMedia, Label, Room, EmojiEmotions} from '@material-ui/icons'
 
 export default function Share() {
   const userFullName = "Something";
+  const postMsgRef = useRef(null);
   const userImg = "";
 
   const checkUserImg = () => {
     if (userImg === "")
       return "./assets/defaultImg.png"
   }
-
-  const postMsgRef = useRef(null);
-  const passwordRef = useRef(null);
 
   const sharePost = () => {
     fetch("http://localhost:4000/api/post", {
