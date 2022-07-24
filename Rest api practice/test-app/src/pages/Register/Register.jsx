@@ -24,6 +24,7 @@ export default function Register({ setType }) {
     }).then(response => response.json()).then(
         obj => {
           alert(obj.message);
+          setType('login');
         }
     );
   };

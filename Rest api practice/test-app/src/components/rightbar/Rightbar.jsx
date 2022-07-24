@@ -20,7 +20,7 @@ export default function Rightbar() {
     <div className='rightbar'>
         <div className="rightbarWrapper">
           <div className="eventContainer">
-            <img src="./assets/gift.png" alt="event image" className="eventImg" />
+            <img src="./assets/gift.png" alt="" className="eventImg" />
             <span className="eventText">
               <b>Something</b> is going on with something and <b>someone</b> is involded in it so do soemthing
             </span>
@@ -32,7 +32,7 @@ export default function Rightbar() {
               <div className="rightbarProfileImgContainer">
                 <img 
                   src={ checkUserImg() } 
-                  alt="profile image" 
+                  alt="" 
                   className="rightbarProfileImg" 
                 />
                 <span className="rightbarOnline"></span>
