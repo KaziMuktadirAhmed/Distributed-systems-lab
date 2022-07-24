@@ -3,10 +3,11 @@ import "./StoryReel.css"
 import Story from '../story/Story'
 import AddStory from "../add-story/AddStory"
 
-function StoryReel() {
+function StoryReel({ fullName }) {
   return (
     <div className='storyReel'>
         <AddStory
+          fullName={ fullName }
           profileSrc="https://i.ytimg.com/vi/Ii8h7DCIcMo/maxresdefault.jpg"
         />
         <Story 

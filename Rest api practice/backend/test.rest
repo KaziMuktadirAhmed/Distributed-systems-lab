@@ -40,6 +40,7 @@ Cookie: jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkZhaGltIE1vcnN
 
 GET http://localhost:4000/api/post
 Content-Type: application/json
+Cookie: jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkZhaGltIE1vcnNoZWQiLCJpYXQiOjE2NTg1ODMwOTksImV4cCI6MTY1OTE4Nzg5OX0.ThmgmtPiLThWQVlLDsbcy7mNEgBlyoTWX6upVSul1ow; Path=/; HttpOnly; SameSite=None;
 
 ###
 

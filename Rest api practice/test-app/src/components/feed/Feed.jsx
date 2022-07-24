@@ -28,7 +28,7 @@ export default function Feed({ fullName }) {
 
   return (
     <div className="feed">
-      <StoryReel />
+      <StoryReel fullName={ fullName } />
       <Share renderFeed={ renderFeed } setRenderFeed={ setRenderFeed } fullName={ fullName }/>
       { 
         posts.map((p) => {

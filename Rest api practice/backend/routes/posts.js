@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Joi = require('joi');
 
 const { Post } = require('../models/post.js');
+const { Story } = require('../models/story.js');
 const { verifyUser } = require('../utils/verify.js');
 const Minio = require('../db/dbObject.js');
 
@@ -22,7 +23,7 @@ router.post("/", verifyUser, (req, res) => {
         const {error} = validate(req.body);
         if(error)
             return res.status(400).send({message: error.details[0].message});
-        
+
         new Post({
             fullName: req.body.fullName,
             message: req.body.message,
@@ -30,16 +31,30 @@ router.post("/", verifyUser, (req, res) => {
         }).save((err, doc) => {
             if(err) res.status(402).send({ message: "Error at saving post data !!!", error: err});
             else res.status(200).send({ message: "Post saved successfully ..." });
-        });
-        // console.log(req.body);    
+        });   
     } catch (error) {
         res.status(500).send({ message: "Internal Server Error at post" });
     }
 });
 
+router.post("/story", verifyUser, (req, res) => {
+    try {
+        new Story({
+            fullName: req.body.fullName,
+            id: req.body.id,
+            date: req.body.date,
+        }).save((err, doc) => {
+            if(err) res.status(402).send({ message: "Error at saving story id data !!!", error: err});
+            else res.status(200).send({ message: "Story id saved successfully ..." });
+        }); 
+    } catch (error) {
+        res.status(500).send({ message: "Internal Server Error at storing story id" });
+    }
+})
+
 router.post("/image", verifyUser, upload.single('image'), (req, res) => {
     try {   
-        var filePath = "/home/kazimuktadir/Desktop/git-repo/Distributed-systems-lab/Rest api practice/backend/" + req.file.path;
+        var filePath = "/home/kazimuktadir/Desktop/Distributed-systems-lab/Rest api practice/backend/" + req.file.path;
         var fileData = req.file;
         var fileName = new Date().getTime().toString() + ".png";
         var metaData = {
@@ -54,9 +69,8 @@ router.post("/image", verifyUser, upload.single('image'), (req, res) => {
 
         Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
-            res.status(200).send({ message: "Image saved successfully ..." });
+            res.status(200).send({ fileId: fileName });
         });
-        // res.status(200).send({ message: "file sent to backend" });
     } catch (error) {
         res.status(500).send({ message: "Internal Server Error at posting image" });
     }

@@ -12,8 +12,8 @@ export default function Share({setRenderFeed, fullName}) {
     if (userImg === "")
       return "./assets/defaultImg.png"
   }
-
   const sharePost = () => {
+    console.log(userFullName);
     fetch("http://localhost:4000/api/post", {
       method: "POST",
       credentials: "include",

@@ -3,8 +3,9 @@ import './AddStory.css';
 import { useState } from 'react';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
-function AddStory({ profileSrc }) {
+function AddStory({ profileSrc, fullName }) {
   const [file, setFile] = useState();
+  const [storyId, setStoryId] = useState(0);
 
   const onSubmit = () => {
     // console.log(file);
@@ -18,8 +19,25 @@ function AddStory({ profileSrc }) {
       body: data,
     }).then(response => response.json()).then(
         obj => {
-          console.log(obj);
+          setStoryId(obj.fileId)
         }
+    );
+
+    fetch("http://localhost:4000/api/post/story", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: fullName,
+        id: storyId,
+        date: new Date().toDateString()
+      }),
+    }).then(response => response.json()).then(
+        obj =>{
+        console.log(obj)
+      }
     );
   }
 
