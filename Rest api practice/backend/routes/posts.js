@@ -37,7 +37,7 @@ router.post("/", verifyUser, (req, res) => {
     }
 });
 
-router.post("/image", verifyUser, upload.single('avatar'), (req, res) => {
+router.post("/image", verifyUser, upload.single('image'), (req, res) => {
     try {   
         var filePath = "/home/kazimuktadir/Desktop/git-repo/Distributed-systems-lab/Rest api practice/backend/" + req.file.path;
         var fileData = req.file;

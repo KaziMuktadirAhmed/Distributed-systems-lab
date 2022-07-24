@@ -20,7 +20,7 @@
     left: 20px;
     color: white;
 }
-.addstory>button{
+.addBtn{
     position: absolute;
     bottom: 30px;
     left: 45px;
@@ -30,8 +30,9 @@
     width: 40px;
     color: blue;
     background-color: white;
+    align-items: center;
 }
-.addstory>button:hover{
+.addBtn:hover{
     cursor: pointer;
 }
 .addstory>button{
