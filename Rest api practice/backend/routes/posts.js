@@ -62,11 +62,6 @@ router.post("/image", verifyUser, upload.single('image'), (req, res) => {
             'X-Amz-Meta-Testing': 1234,
             'example': 5678
         };
-
-        console.log(filePath);
-        console.log(fileData);
-        console.log(fileName);
-
         Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
             res.status(200).send({ fileId: fileName });
