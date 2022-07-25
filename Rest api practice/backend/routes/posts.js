@@ -14,7 +14,16 @@ router.get('/', verifyUser, (req, res) => {
         if(!err)    
             res.send(doc);
         else
-            console.log('Error in fetching user data: ' + JSON.stringify(err, undefined, 2));
+            console.log('Error in fetching post data: ' + JSON.stringify(err, undefined, 2));
+    });
+});
+
+router.get('/story', verifyUser, (req, res) => {
+    Story.find((err, doc) => {
+        if(!err)    
+            res.send(doc);
+        else
+            console.log('Error in fetching story data: ' + JSON.stringify(err, undefined, 2));
     });
 });
 
@@ -55,7 +64,6 @@ router.post("/story", verifyUser, (req, res) => {
 router.post("/image", verifyUser, upload.single('image'), (req, res) => {
     try {   
         var filePath = "/home/kazimuktadir/Desktop/Distributed-systems-lab/Rest api practice/backend/" + req.file.path;
-        var fileData = req.file;
         var fileName = new Date().getTime().toString() + ".png";
         var metaData = {
             'Content-Type': 'application/octet-stream',
@@ -63,7 +71,11 @@ router.post("/image", verifyUser, upload.single('image'), (req, res) => {
             'example': 5678
         };
         Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
-            if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
+            if (err){ 
+                console.log(etag);
+                return res.status(402).send({ message: "Error at saving image data !!!", error: err});
+                
+            }
             res.status(200).send({ fileId: fileName });
         });
     } catch (error) {
@@ -78,7 +90,10 @@ router.post("/image/path", verifyUser, (req, res) => {
         var fileName = new Date().getTime().toString() + ".png";
 
         Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
-            if (err) return res.status(402).send({ message: "Error at saving image data !!!", error: err});
+            if (err) { 
+                console.log(etag);
+                return res.status(401).send({ message: "Error at saving image data !!!", error: err, errorTag: etag});
+            }
             res.status(200).send({ message: "Image saved successfully ..." });
         });
     } catch (error) {
