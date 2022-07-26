@@ -35,10 +35,10 @@ function AddStory({ profileSrc, fullName, setRenderReel }) {
       }),
     }).then(response => response.json()).then(
         obj =>{
-        console.log(obj)
+        console.log(obj);
+        setRenderReel(prev => !prev);
       }
     );
-    setRenderReel(true);
   }
 
   return (

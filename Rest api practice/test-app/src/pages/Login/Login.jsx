@@ -22,6 +22,7 @@ export default function Login( { setIsAuthenticated, setType, setFullName } ) {
     }).then(response => response.json()).then(
         obj => {
           console.log(obj);
+          alert(obj.message)
           setIsAuthenticated(obj.isAuthenticated);
           setFullName(obj.fullName);
         }
