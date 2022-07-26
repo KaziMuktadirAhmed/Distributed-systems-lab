@@ -21,7 +21,7 @@ Content-Type: application/json
 
 {
     "email" : "bsse1132@iit.du.ac.bd",
-    "password" : "//Temujin007//"
+    "password" : "//Proma1132//"
 }
 
 ###
@@ -30,9 +30,9 @@ POST http://localhost:4000/api/post
 Content-Type: application/json
 
 {
-    "fullName": "dadrakhul hque",
-    "message": "I did absoloutely nothing helpful",
-    "date": "18th Jul 2022"
+    "fullName": "Proma Choudhury",
+    "message": "Fixed promise resolve problem in bcrypt.compare() sheeeeessssh",
+    "date": "26th Jul 2022"
 }
 
 ###
