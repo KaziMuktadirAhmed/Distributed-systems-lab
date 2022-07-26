@@ -1,3 +1,10 @@
+.addStoryWrapper {
+    width: 120px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
 .addstory{
     position: relative;
     background-position: center center;

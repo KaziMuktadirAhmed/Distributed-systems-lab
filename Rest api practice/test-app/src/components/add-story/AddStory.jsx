@@ -8,7 +8,6 @@ function AddStory({ profileSrc, fullName }) {
   const [storyId, setStoryId] = useState(0);
 
   const onSubmit = () => {
-    // console.log(file);
     const data = new FormData();
     data.append('image', file);
     console.log(data);
@@ -42,26 +41,26 @@ function AddStory({ profileSrc, fullName }) {
   }
 
   return (
-    <div className='addstory' style={{backgroundImage:`url(${profileSrc})`}}>
-        {/* <form action="http://localhost:4000/api/post/image" method="post" enctype="multipart/form-data"> */}
-            <input 
-              type="file" 
-              name="avatar" 
-              onChange={ event => {
-                const file = event.target.files[0];
-                setFile(file)
-              }}
-            />
-            <button 
-              className='addBtn'
-              onClick={ onSubmit }
-            >
-                <AddCircleIcon/>
-            </button>
-        {/* </form> */}
+    <div className="addStoryWrapper">
+      <div className='addstory' style={{backgroundImage:`url(${profileSrc})`}}>
+        <button 
+          className='addBtn'
+          onClick={ onSubmit }
+        >
+          <AddCircleIcon/>
+        </button>
         <h4>Add Story</h4>
+      </div>
+      <input 
+        type="file" 
+        name="avatar" 
+        onChange={ event => {
+          const file = event.target.files[0];
+          setFile(file)
+        }}
+      />
     </div>
-  ) 
+  ); 
 }
 
 export default AddStory
