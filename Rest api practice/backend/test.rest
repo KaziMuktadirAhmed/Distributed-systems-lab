@@ -2,10 +2,10 @@ POST  http://localhost:4000/api/users
 Content-Type: application/json
 
 {
-    "firstName" : "Fahim",
-    "lastName" : "Morshed",
-    "email" : "bsse1102@iit.du.ac.bd",
-    "password" : "//Temujin007//"
+    "firstName" : "Proma",
+    "lastName" : "Choudhury",
+    "email" : "bsse1132@iit.du.ac.bd",
+    "password" : "//Proma1132//"
     
 }
 
@@ -20,7 +20,7 @@ POST http://localhost:4000/api/auth
 Content-Type: application/json
 
 {
-    "email" : "bsse1102@iit.du.ac.bd",
+    "email" : "bsse1132@iit.du.ac.bd",
     "password" : "//Temujin007//"
 }
 
