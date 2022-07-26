@@ -24,7 +24,7 @@ export default function Feed({ fullName }) {
           setPosts(obj);
         }
     );
-  }, [renderFeed])
+  }, [renderFeed]);
 
   return (
     <div className="feed">

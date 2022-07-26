@@ -3,4 +3,6 @@
     flex: 1;
     margin-top: 20px;
     margin-bottom: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }

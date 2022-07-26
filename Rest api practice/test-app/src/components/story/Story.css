@@ -11,6 +11,7 @@
     cursor: pointer;
     transition: transform 100ms ease-in;
     box-shadow: 0px 5px 17px -7px rgba(0 ,0, 0, 0.75);
+    object-fit: contain;
 }
 .story:hover{
     transform: scale(1.07);

@@ -3,7 +3,7 @@ import './AddStory.css';
 import { useState } from 'react';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
-function AddStory({ profileSrc, fullName }) {
+function AddStory({ profileSrc, fullName, setRenderReel }) {
   const [file, setFile] = useState();
   const [storyId, setStoryId] = useState(0);
 
@@ -38,6 +38,7 @@ function AddStory({ profileSrc, fullName }) {
         console.log(obj)
       }
     );
+    setRenderReel(true);
   }
 
   return (
