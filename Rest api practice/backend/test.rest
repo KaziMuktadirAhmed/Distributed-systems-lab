@@ -62,11 +62,8 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:4000/api/post/image
+GET http://localhost:4000/api/post/image/1658919703740.png
 Content-Type: application/json
 
-{
-    "fileId": "1658899402201.png" 
-}
 
 ###

@@ -12,17 +12,21 @@ function AddStory({ profileSrc, fullName, setRenderReel }) {
     data.append('image', file);
     console.log(data);
 
+
+    // <img src="http://localhost/" />
+
     fetch("http://localhost:4000/api/post/image", {
       method: "POST",
       credentials: "include",
       body: data,
     }).then(response => response.json()).then(
       obj => {
-        setStoryId(obj.fileId)
+        setStoryId(obj.fileId);
+        console.log(storyId);
       }
     );
     
-    if(storyId !== ''){
+    if(storyId !== '') {
       fetch("http://localhost:4000/api/post/story", {
         method: "POST",
         credentials: "include",

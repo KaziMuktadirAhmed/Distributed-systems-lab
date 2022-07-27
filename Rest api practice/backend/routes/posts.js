@@ -72,9 +72,7 @@ router.post("/image", verifyUser, upload.single('image'), (req, res) => {
         };
         minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err){ 
-                console.log(etag);
                 return res.status(402).send({ message: "Error at saving image data !!!", error: err});
-                
             }
             res.status(200).send({ fileId: fileName });
         });
@@ -96,7 +94,6 @@ router.get("/image/:id", verifyUser, (req, res) => {
             objStream.on('end', () => {
                 res.writeHead(200, { 'Content-Type': 'image/jpeg' });
                 res.write(data);
-                // console.log(res);
                 res.end();
             });
         });
@@ -113,7 +110,6 @@ router.post("/image/path", verifyUser, (req, res) => {
 
         minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err) { 
-                console.log(etag);
                 return res.status(401).send({ message: "Error at saving image data !!!", error: err, errorTag: etag});
             }
             res.status(200).send({ message: "Image saved successfully ..." });

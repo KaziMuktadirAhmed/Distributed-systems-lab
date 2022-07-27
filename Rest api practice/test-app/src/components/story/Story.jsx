@@ -1,32 +1,14 @@
 import "./Story.css"
 
 import { Avatar } from '@mui/material'
-import { useState } from "react";
+// import { useEffect, useState } from "react";
 
 function Story({imageId, title}) {
   const defaultImg = "./assets/defaultImg.png";
-  const [imageUrl, setImageUrl] = useState('');
-
-  const fetchImage = (imageId) => {
-    fetch("http://localhost:4000/api/post/story/" + imageId, {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then(response => response.blob()).then(
-        obj =>{
-          console.log("ok"); 
-          setImageUrl(URL.createObjectURL(obj));
-          console.log(imageUrl)
-        }
-    );
-  }
-
+  const imageURL = "http://localhost:4000/api/post/story/" + imageId;
 
   return (
-    <div style={ { backgroundImage: `url(${imageUrl})` } } className='story'>
-      { fetchImage(imageId) }
+    <div style={ { backgroundImage: `url(${imageURL})` } } className='story'>
       <Avatar className='story__avatar' src = { defaultImg }/>
       <h4>{ title }</h4>
     </div>

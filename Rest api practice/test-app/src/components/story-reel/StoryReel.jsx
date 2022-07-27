@@ -10,6 +10,7 @@ function StoryReel({ fullName }) {
   const [storyIds, setStoryIds] = useState([]);
   const [renderReel, setRenderReel] = useState(false);
 
+
   useEffect(() =>  {
     fetch("http://localhost:4000/api/post/story", {
       method: "GET",
@@ -34,7 +35,8 @@ function StoryReel({ fullName }) {
       />
       { 
         storyIds.map((s) => {
-          return  <Story 
+          return  <Story
+                    key = {s.key} 
                     imageId = { s.id } 
                     title = { s.fullName } 
                   />;
