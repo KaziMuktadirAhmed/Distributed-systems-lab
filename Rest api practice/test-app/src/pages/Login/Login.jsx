@@ -16,9 +16,7 @@ export default function Login( { setIsAuthenticated, setType, setFullName } ) {
       body: JSON.stringify({
         email: emailRef.current.value,
         password: passwordRef.current.value,
-      }
-      
-      ),
+      }),
     }).then(response => response.json()).then(
         obj => {
           console.log(obj);

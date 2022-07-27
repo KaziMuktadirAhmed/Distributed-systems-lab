@@ -4,7 +4,7 @@ const Joi = require('joi');
 const { Post } = require('../models/post.js');
 const { Story } = require('../models/story.js');
 const { verifyUser } = require('../utils/verify.js');
-const Minio = require('../db/dbObject.js');
+const { minioClient } = require('../db/dbObject.js');
 
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
@@ -70,7 +70,7 @@ router.post("/image", verifyUser, upload.single('image'), (req, res) => {
             'X-Amz-Meta-Testing': 1234,
             'example': 5678
         };
-        Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
+        minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err){ 
                 console.log(etag);
                 return res.status(402).send({ message: "Error at saving image data !!!", error: err});
@@ -83,13 +83,35 @@ router.post("/image", verifyUser, upload.single('image'), (req, res) => {
     }
 });
 
+router.get("/image/:id", verifyUser, (req, res) => {
+    try {
+        let data;
+        minioClient.getObject(process.env.MINIO_BUCKET, req.params.id, (err, objStream) => {
+            if(err) {
+                return res.status(404).send({ message: "Image not found" });
+            }
+            objStream.on('data', (chunk) => {
+                data = !data ? new Buffer(chunk) : Buffer.concat([data, chunk]);
+            });
+            objStream.on('end', () => {
+                res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+                res.write(data);
+                // console.log(res);
+                res.end();
+            });
+        });
+    } catch (error) {
+        res.status(500).send({ message: "Internal Server Error at fetching image" });
+    }
+});
+
 router.post("/image/path", verifyUser, (req, res) => {
     try {   
         var filePath = req.body.filePath;
         var metaData = req.body.metaData;
         var fileName = new Date().getTime().toString() + ".png";
 
-        Minio.minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
+        minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err) { 
                 console.log(etag);
                 return res.status(401).send({ message: "Error at saving image data !!!", error: err, errorTag: etag});

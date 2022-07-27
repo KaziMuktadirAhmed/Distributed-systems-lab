@@ -35,7 +35,7 @@ function StoryReel({ fullName }) {
       { 
         storyIds.map((s) => {
           return  <Story 
-                    image = { "http://10.100.104.14:9000/ok-ish/" + s.id } 
+                    imageId = { s.id } 
                     title = { s.fullName } 
                   />;
         }) 
