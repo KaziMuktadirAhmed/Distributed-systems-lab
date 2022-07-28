@@ -5,12 +5,11 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function AddStory({ profileSrc, fullName, setRenderReel }) {
   const [file, setFile] = useState();
-  const [storyId, setStoryId] = useState('');
 
   const onSubmit = () => {
     const data = new FormData();
     data.append('image', file);
-    console.log(data);
+    // console.log(data);
 
 
     // <img src="http://localhost/" />
@@ -21,29 +20,28 @@ function AddStory({ profileSrc, fullName, setRenderReel }) {
       body: data,
     }).then(response => response.json()).then(
       obj => {
-        setStoryId(obj.fileId);
-        console.log(storyId);
-      }
-    );
-    
-    if(storyId !== '') {
-      fetch("http://localhost:4000/api/post/story", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fullName: fullName,
-          id: storyId,
-          date: new Date().toDateString()
-        }),
-      }).then(response => response.json()).then(
-          obj =>{
-          console.log(obj);
-          setRenderReel(prev => !prev);
-        });
-    }
+        postImageID(obj.fileId);
+      });
+  }
+
+  const postImageID = (storyId) => {
+    console.log("dhukse")
+    fetch("http://localhost:4000/api/post/story", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: fullName,
+        id: storyId,
+        date: new Date().toDateString()
+      }),
+    }).then(response => response.json()).then(
+      obj =>{
+      console.log(obj);
+      setRenderReel(prev => !prev);
+    });
   }
 
   return (
