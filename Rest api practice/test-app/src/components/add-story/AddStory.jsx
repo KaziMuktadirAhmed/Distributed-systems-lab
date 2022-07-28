@@ -9,10 +9,6 @@ function AddStory({ profileSrc, fullName, setRenderReel }) {
   const onSubmit = () => {
     const data = new FormData();
     data.append('image', file);
-    // console.log(data);
-
-
-    // <img src="http://localhost/" />
 
     fetch("http://localhost:4000/api/post/image", {
       method: "POST",

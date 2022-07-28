@@ -1,7 +1,6 @@
 import "./Story.css"
 
 import { Avatar } from '@mui/material'
-// import { useEffect, useState } from "react";
 
 function Story({imageId, title}) {
   const defaultImg = "./assets/defaultImg.png";

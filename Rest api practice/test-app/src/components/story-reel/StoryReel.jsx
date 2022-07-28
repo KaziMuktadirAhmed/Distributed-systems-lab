@@ -7,9 +7,10 @@ import { useState } from "react"
 import { useEffect } from "react";
 
 function StoryReel({ fullName }) {
+  const defaultAddImg = "./assets/defaultAddImg.jpeg";
+
   const [storyIds, setStoryIds] = useState([]);
   const [renderReel, setRenderReel] = useState(false);
-
 
   useEffect(() =>  {
     fetch("http://localhost:4000/api/post/story", {
@@ -29,7 +30,7 @@ function StoryReel({ fullName }) {
     <div className='storyReel'>
       <AddStory
         fullName={ fullName }
-        profileSrc="https://i.ytimg.com/vi/Ii8h7DCIcMo/maxresdefault.jpg"
+        profileSrc={ defaultAddImg }
         setRenderReel= { setRenderReel }
         renderReel={ renderReel }
       />
