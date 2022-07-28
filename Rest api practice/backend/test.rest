@@ -61,8 +61,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:4000/api/post/image/1658920215916.png
+GET http://localhost:4000/api/post/image/1658992958050.png
 Content-Type: application/json
-
 
 ###

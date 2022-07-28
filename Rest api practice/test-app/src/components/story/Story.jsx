@@ -5,7 +5,7 @@ import { Avatar } from '@mui/material'
 
 function Story({imageId, title}) {
   const defaultImg = "./assets/defaultImg.png";
-  const imageURL = "http://localhost:4000/api/post/story/" + imageId;
+  const imageURL = "http://localhost:4000/api/post/image/" + imageId;
 
   return (
     <div style={ { backgroundImage: `url(${imageURL})` } } className='story'>
