@@ -6,7 +6,6 @@ Content-Type: application/json
     "lastName" : "Choudhury",
     "email" : "bsse1132@iit.du.ac.bd",
     "password" : "//Proma1132//"
-    
 }
 
 ###

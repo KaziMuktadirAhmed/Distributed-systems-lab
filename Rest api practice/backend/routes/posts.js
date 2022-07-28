@@ -4,7 +4,7 @@ const Joi = require('joi');
 const { Post } = require('../models/post.js');
 const { Story } = require('../models/story.js');
 const { verifyUser } = require('../utils/verify.js');
-const { minioClient } = require('../db/dbObject.js');
+const minioClient = require('../db/dbObject.js');
 
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
@@ -15,7 +15,7 @@ router.get('/', verifyUser, (req, res) => {
             res.send(doc);
         else
             console.log('Error in fetching post data: ' + JSON.stringify(err, undefined, 2));
-    });
+    }).sort({$natural: -1});
 });
 
 router.get('/story', verifyUser, (req, res) => {
@@ -62,7 +62,8 @@ router.post("/story", verifyUser, (req, res) => {
 })
 
 router.post("/image", verifyUser, upload.single('image'), (req, res) => {
-    try {   
+    try { 
+        console.log(req.file.path);  
         var filePath = "/home/kazimuktadir/Desktop/Distributed-systems-lab/Rest api practice/backend/" + req.file.path;
         var fileName = new Date().getTime().toString() + ".png";
         var metaData = {
@@ -70,6 +71,7 @@ router.post("/image", verifyUser, upload.single('image'), (req, res) => {
             'X-Amz-Meta-Testing': 1234,
             'example': 5678
         };
+        // minioClient();
         minioClient.fPutObject(process.env.MINIO_BUCKET, fileName, filePath, metaData, function(err, etag) {
             if (err){ 
                 return res.status(402).send({ message: "Error at saving image data !!!", error: err});

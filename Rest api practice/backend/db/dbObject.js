@@ -8,4 +8,4 @@ const minioClient = new Minio.Client({
     secretKey: 'miniostorage'
 });
 
-module.exports = { minioClient };
+module.exports = minioClient;
