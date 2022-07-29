@@ -63,8 +63,8 @@ router.post("/story", verifyUser, (req, res) => {
 
 router.post("/image", verifyUser, upload.single('image'), (req, res) => {
     try { 
-        console.log(req.file.path);  
-        var filePath = "/home/kazimuktadir/Desktop/Distributed-systems-lab/Rest api practice/backend/" + req.file.path;
+        // console.log(req.file.path);  
+        var filePath = process.env.HOME_VM_UPLOADS_DIR + req.file.path;
         var fileName = new Date().getTime().toString() + ".png";
         var metaData = {
             'Content-Type': 'application/octet-stream',
