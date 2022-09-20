@@ -1,0 +1,21 @@
+server {
+	listen 8000;
+	listen [::]:8000;
+
+#	server_name example.com;
+
+#	root /var/www/example.com;
+#	index index.html;
+
+	location /authentication {
+		proxy_pass http://127.0.0.1:4100/api;
+	}
+
+	location /status {
+		proxy_pass http://127.0.0.1:4200/api;
+	}
+
+	location /story {
+		proxy_pass http://127.0.0.1:4300/api;
+	}
+}

@@ -1,0 +1,44 @@
+/* leftbar style */
+.leftbar {
+    flex: 3;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    position: sticky;
+    top: 50px;
+}
+
+.leftbarWrapper {
+    padding: 20px;
+}
+
+.leftbarList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.leftbarListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.leftbarIcon {
+    margin-right: 15px;
+}
+
+.leftbarListItemText {
+    font-weight: 400;
+}
+
+.leftbarButton {
+    width: 150px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.leftbarHr {
+    margin: 20px 0;
+}

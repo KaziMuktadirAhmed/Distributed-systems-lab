@@ -1,0 +1,48 @@
+.addStoryWrapper {
+    width: 120px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.addstory{
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: red;
+    width: 120px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 100ms ease-in;
+    box-shadow: 0px 5px 17px -7px rgba(0 ,0, 0, 0.75);
+    display: flex;
+}
+
+.addstory>h4{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+}
+.addBtn{
+    position: absolute;
+    bottom: 30px;
+    left: 45px;
+    border: none;
+    border-radius: 200px;
+    height: 40px;
+    width: 40px;
+    color: blue;
+    background-color: white;
+    align-items: center;
+}
+.addBtn:hover{
+    cursor: pointer;
+}
+.addstory>button{
+    align-items: center;
+}

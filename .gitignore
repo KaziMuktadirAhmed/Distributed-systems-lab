@@ -1,0 +1,7 @@
+# rest request file for api testing
+*.rest
+*/uploads/*
+*/microservice/accountDB/*
+*/microservice/statusDB/*
+*/microservice/storyDB/*
+*/microservice/minio_data/*
