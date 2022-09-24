@@ -1,0 +1,12 @@
+{
+    "development": {
+        "PORT": 3001,
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "600m"
+    },
+    "production": {
+        "PORT": 80,
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "3600m"
+    }
+}
