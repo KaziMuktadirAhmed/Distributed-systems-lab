@@ -4,7 +4,7 @@ services:
     image: nginx
     restart: unless-stopped
     ports:
-      - 7777:7777
+      - 1111:1111
     depends_on:
       - service1
       - service2
@@ -14,6 +14,10 @@ services:
   service1:
     build: ./Service1
     restart: unless-stopped
+    depends_on:
+      - service2
+    volumes:
+      - /home/kazimuktadir/Desktop/BSSE1111/my_file.txt:/usr/src/app/my_file.txt
 
   service2:
     build: ./Service2
