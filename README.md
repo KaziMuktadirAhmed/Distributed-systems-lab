@@ -1,7 +1,7 @@
 # Social Media App (Demo)
 Hello this is the first commit for the distributed systems lab repository
 
-The actual project is inside the Rest-api-practice folder.<br>
+The actual project is inside the <strong>Rest-api-practice<strong> folder.<br>
 Frontend folder contains the frontend code. <br>
 Backend folder contains the monolothic backend for the application. <br>
 Micorservices folder contains the same backend written in microservice architechture. The system in total has 3 service. A authentication service, story service, status service, each contained in it's own folder.
